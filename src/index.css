@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    @apply bg-ivory text-charcoal font-sans antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Accessible, visible focus states everywhere */
+  :focus-visible {
+    outline: 2px solid theme("colors.clay");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: theme("colors.forest.DEFAULT");
+    color: theme("colors.ivory");
+  }
+}
+
+@layer components {
+  .container-wrap {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[0.7rem] font-semibold uppercase tracking-eyebrow;
+  }
+
+  .display {
+    @apply font-serif font-medium leading-[0.98] tracking-[-0.01em];
+  }
+
+  /* Warm off-white / ghost buttons echoing the reference site */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5
+      font-sans text-sm font-semibold tracking-wide transition-all duration-300 ease-soft;
+  }
+  .btn-light {
+    @apply btn bg-ivory text-forest-deep hover:bg-white hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20;
+  }
+  .btn-outline {
+    @apply btn border border-ivory/40 text-ivory hover:border-ivory hover:bg-ivory/10;
+  }
+  .btn-dark {
+    @apply btn bg-forest-deep text-ivory hover:bg-forest hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest/30;
+  }
+  .btn-outline-dark {
+    @apply btn border border-forest/25 text-forest-deep hover:border-forest hover:bg-forest/5;
+  }
+
+  .link-underline {
+    @apply relative inline-flex w-fit items-center gap-2 font-sans text-sm font-semibold;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-current
+      transition-transform duration-500 ease-soft;
+  }
+  .link-underline:hover::after {
+    @apply origin-right scale-x-0;
+  }
+}
