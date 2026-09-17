@@ -23,7 +23,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(14,28,22,0.72) 0%, rgba(14,28,22,0.34) 34%, rgba(14,28,22,0.66) 72%, rgba(14,28,22,0.94) 100%)",
+            "linear-gradient(180deg, rgba(14,32,56,0.72) 0%, rgba(14,32,56,0.32) 34%, rgba(14,32,56,0.66) 72%, rgba(14,32,56,0.95) 100%)",
         }}
       />
       <div className="absolute inset-0 bg-forest-deep/25 mix-blend-multiply" />

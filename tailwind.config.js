@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Calm, cinematic recovery palette
+        // Calm, cinematic recovery palette — blue-forward, drawn from the brand mark
         forest: {
-          DEFAULT: "#1f3a2e", // deep forest green
-          deep: "#152a20",
-          950: "#0e1c16",
+          // (token name kept; values now a deep, restful navy)
+          DEFAULT: "#254a78", // brand blue, mid
+          deep: "#173458", // deep navy
+          950: "#0e2038", // near-black navy
         },
-        olive: "#5c6b45", // muted olive (from the brand mark)
+        olive: "#4d6a55", // muted green (secondary accent from the brand mark)
         brandblue: "#274a86", // restrained blue (from the brand mark)
         charcoal: "#20211d",
         ivory: "#f6f2e9", // warm off-white
